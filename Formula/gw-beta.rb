@@ -14,9 +14,24 @@ class GwBeta < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/mthines/gw-tools/releases/download/v0.13.4-beta.1/gw-linux-arm64"
+      sha256 "e071785e601aaee614385ddbb2d2590d8512d6aec9f6e4c74142db12b14a485f"
+    else
+      url "https://github.com/mthines/gw-tools/releases/download/v0.13.4-beta.1/gw-linux-x64"
+      sha256 "c2600e7900afe9bb4d1f67b46f1ec65f2f133e5df39a6de6a568f76c497b2921"
+    end
+  end
+
   def install
-    bin.install "gw-macos-arm64" => "gw" if Hardware::CPU.arm?
-    bin.install "gw-macos-x64" => "gw" if Hardware::CPU.intel?
+    if OS.mac?
+      bin.install "gw-macos-arm64" => "gw" if Hardware::CPU.arm?
+      bin.install "gw-macos-x64" => "gw" if Hardware::CPU.intel?
+    else
+      bin.install "gw-linux-arm64" => "gw" if Hardware::CPU.arm?
+      bin.install "gw-linux-x64" => "gw" if Hardware::CPU.intel?
+    end
   end
 
   test do
