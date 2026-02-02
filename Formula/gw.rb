@@ -14,9 +14,24 @@ class Gw < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/mthines/gw-tools/releases/download/v0.0.0/gw-linux-arm64"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    else
+      url "https://github.com/mthines/gw-tools/releases/download/v0.0.0/gw-linux-x64"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    end
+  end
+
   def install
-    bin.install "gw-macos-arm64" => "gw" if Hardware::CPU.arm?
-    bin.install "gw-macos-x64" => "gw" if Hardware::CPU.intel?
+    if OS.mac?
+      bin.install "gw-macos-arm64" => "gw" if Hardware::CPU.arm?
+      bin.install "gw-macos-x64" => "gw" if Hardware::CPU.intel?
+    else
+      bin.install "gw-linux-arm64" => "gw" if Hardware::CPU.arm?
+      bin.install "gw-linux-x64" => "gw" if Hardware::CPU.intel?
+    end
   end
 
   test do
