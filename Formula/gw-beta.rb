@@ -1,4 +1,4 @@
-class GwATBeta < Formula
+class GwBeta < Formula
   desc "Git worktree manager - Streamline your multi-branch development workflow (Beta)"
   homepage "https://github.com/mthines/gw-tools"
   version "0.13.4-beta.1"
