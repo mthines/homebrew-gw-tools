@@ -1,26 +1,26 @@
 class GwBeta < Formula
   desc "Git worktree manager - Streamline your multi-branch development workflow (Beta)"
   homepage "https://github.com/mthines/gw-tools"
-  version "0.38.0-beta.36.4"
+  version "0.38.1-beta.37.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mthines/gw-tools/releases/download/v0.38.0-beta.36.4/gw-macos-arm64"
-      sha256 "1c5d577012177f00c82fa7030e8e516a772bb518b29a57481700441967364268"
+      url "https://github.com/mthines/gw-tools/releases/download/v0.38.1-beta.37.1/gw-macos-arm64"
+      sha256 "f994fc46e7c08f268f769005cbe86db8f728fcd6e18832b247e5fb4562512273"
     else
-      url "https://github.com/mthines/gw-tools/releases/download/v0.38.0-beta.36.4/gw-macos-x64"
-      sha256 "4e5823f53c418a9883d15eae5c433e0668520a6bd1aff99d5ef371f3b8e71e70"
+      url "https://github.com/mthines/gw-tools/releases/download/v0.38.1-beta.37.1/gw-macos-x64"
+      sha256 "5b93b6a2d40ae54f09181974c24d21309799a51cccad783b5dcd489496ef6d49"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/mthines/gw-tools/releases/download/v0.38.0-beta.36.4/gw-linux-arm64"
-      sha256 "00cac563c6ffc920c15e14819ef8b33206301907cecdbd61af0596b8c0f0182f"
+      url "https://github.com/mthines/gw-tools/releases/download/v0.38.1-beta.37.1/gw-linux-arm64"
+      sha256 "dc38fc454f5e57b47c54d3a1d609d1a2c23e6c499f924b75c71304c31af45a31"
     else
-      url "https://github.com/mthines/gw-tools/releases/download/v0.38.0-beta.36.4/gw-linux-x64"
-      sha256 "3685e20da2246886ff2df3a1d31d62c91f15ff4e402e23f16ed6c6e1ae0351fd"
+      url "https://github.com/mthines/gw-tools/releases/download/v0.38.1-beta.37.1/gw-linux-x64"
+      sha256 "02ceecf2d02affc40b397663f7dd6708ab4d4e5ed6b5bc06b606aed0db8b3ddc"
     end
   end
 
