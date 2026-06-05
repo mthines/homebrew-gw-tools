@@ -1,4 +1,5 @@
-class GwBeta < Formula
+class GwBetaAT0620Beta721 < Formula
+  link_overwrite "bin/gw"
   desc "Git worktree manager - Streamline your multi-branch development workflow (Beta)"
   homepage "https://github.com/mthines/gw-tools"
   version "0.62.0-beta.72.1"
